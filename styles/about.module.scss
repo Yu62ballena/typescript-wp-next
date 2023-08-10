@@ -1,0 +1,9 @@
+@import "styles/utils.module.scss";
+
+.figure {
+  @extend .figure;
+}
+
+.image {
+  @extend .image;
+}

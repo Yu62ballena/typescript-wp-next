@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import Hero from "components/hero";
 import Container from "components/container";
 import Meta from "components/meta";
@@ -8,11 +8,12 @@ import Posts from "components/posts";
 import { eyecatchLocal } from "lib/constants";
 import { GetStaticProps } from "next";
 
-const Home: NextPage<{ posts: GetAllPostsType[] }> = ({ posts }) => {
+const Blog: NextPage<{ posts: GetAllPostsType[] }> = ({ posts }) => {
   return (
     <Container>
-      <Meta />
-      <Hero title="CUBE" subtitle="アウトプットしていくサイト" imageOn />
+      <Meta pageTitle="Blog" pageDesc="ブログの記事一覧" />
+      <Hero title="Blog" subtitle="Recent Posts" />
+
       <Posts posts={posts} />
     </Container>
   );
@@ -26,6 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
       post.eyecatch = eyecatchLocal;
     }
   }
+
   return {
     props: {
       posts: posts,
@@ -33,4 +35,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Home;
+export default Blog;

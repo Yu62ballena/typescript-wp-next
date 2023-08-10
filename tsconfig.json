@@ -13,8 +13,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/footer.tsx",
+    "components/header.tsx",
+    "components/hero.tsx",
+    "pages/test.js",
+    "lib/api-wp.tsx",
+    "pages/blog/[slug].tsx",
+    "components/convertBody.js",
+    "lib/extract-text.js",
+    "pages/blog/category/[slug].js"
+  ],
   "exclude": ["node_modules"]
 }
